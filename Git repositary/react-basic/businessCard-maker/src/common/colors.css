@@ -1,0 +1,13 @@
+@value makerBlack: rgb(40, 40, 40);
+@value makerKhaki: rgb(142, 103, 42);
+@value makerRed: rgb(239, 48, 37);
+@value makerwhite: White;
+@value makerBgBlack: rgb(37, 37, 37);
+
+@value makerGreen: #385461;
+@value makerPink: pink;
+@value makerOrange: #f97007;
+@value makerLightOrange: #f9994f;
+@value makerShadow: rgba(217, 217, 217, 1);
+@value makerColorful: linear-gradient(166deg, rgba(237, 193, 211, 1) 0%,rgba(212, 149, 161, 1) 60%, rgba(162, 63, 63, 1) 100%, rgba(127, 188, 242, 1) 100%);
+@value makerWheat: wheat;

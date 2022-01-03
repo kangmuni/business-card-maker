@@ -1,0 +1,28 @@
+@value makerWhite from '../../common/colors.css';
+@value makerOrange from '../../common/colors.css';
+@value makerGrey from '../../common/colors.css';
+
+.header {
+  display: flex;
+  padding: 2.5em;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 50px;
+  color: makerWhite;
+  width: 100%;
+  margin: 0;
+}
+
+.logout {
+  width: 5em;
+  height: 3em;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background-color: makerwhite;
+  color: makerOrange;
+  font-weight: bold;
+  border-radius: 5px;
+}

@@ -1,30 +1,42 @@
-import React from 'react';
-import Footer from '../footer/footer';
-import Header from '../header/header';
+import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import styles from './login.module.css';
 
 const Login = ({ authService }) => {
+  const navigate = useNavigate();
+
+  const goToMaker = (userId) => {
+    navigate('/maker', { id: userId });
+  };
+
   const onLogin = (event) => {
     authService //
       .login(event.currentTarget.textContent)
-      .then(console.log);
+      .then((data) => goToMaker(data.user.uid));
   };
 
+  useEffect(() => {
+    authService //
+      .onAuthChange((user) => {
+        user && goToMaker(user.uid);
+      });
+  });
+
   return (
-    <section>
-      <Header />
-      <section>
-        <h1>login</h1>
-        <ul>
-          <li>
-            <button onClick={onLogin}>Google</button>
-          </li>
-          <li>
-            <button onClick={onLogin}>Github</button>
-          </li>
-        </ul>
-      </section>
-      <Footer />
+    <section className={styles.login}>
+      <h1 className={styles.title}>Login</h1>
+      <ul className={styles.ul}>
+        <li className={styles.list}>
+          <button className={styles.button} onClick={onLogin}>
+            Google
+          </button>
+        </li>
+        <li className={styles.list}>
+          <button className={styles.button} onClick={onLogin}>
+            Github
+          </button>
+        </li>
+      </ul>
     </section>
   );
 };

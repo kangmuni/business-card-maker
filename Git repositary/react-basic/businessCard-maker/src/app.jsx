@@ -9,11 +9,11 @@ function App({ authService }) {
     <div className={styles.app}>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Login authService={authService} />}></Route>
           <Route
-            path="/*"
-            element={<Login authService={authService} />}
+            path="/maker"
+            element={<Maker authService={authService} />}
           ></Route>
-          <Route path="/maker" element={<Maker />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

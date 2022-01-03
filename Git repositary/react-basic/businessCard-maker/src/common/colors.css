@@ -1,10 +1,5 @@
-@value makerBlack: rgb(40, 40, 40);
-@value makerKhaki: rgb(142, 103, 42);
-@value makerRed: rgb(239, 48, 37);
-@value makerBgBlack: rgb(37, 37, 37);
-@value makerLightGrey: rgb(216, 217, 219);
 @value makerGrey: rgb(213, 214, 215);
-@value makerWhite: rgb(232, 233, 234);
+@value makerLightGrey: rgb(232, 233, 234);
 @value makerOrange: rgb(239, 69, 38);
 
 @value makerWheat: wheat;

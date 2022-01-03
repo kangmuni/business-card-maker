@@ -1,4 +1,4 @@
-@value makerWhite from '../../common/colors.css';
+@value makerLightGrey from '../../common/colors.css';
 @value makerOrange from '../../common/colors.css';
 @value makerGrey from '../../common/colors.css';
 
@@ -10,7 +10,7 @@
 
 .title {
   font-size: 50px;
-  color: makerWhite;
+  color: makerLightGrey;
   width: 100%;
   margin: 0;
 }
@@ -25,4 +25,7 @@
   color: makerOrange;
   font-weight: bold;
   border-radius: 5px;
+  box-shadow: 10px 5px 5px -4px rgba(143, 141, 141, 0.75);
+  -webkit-box-shadow: 5px 5px 5px -4px rgba(143, 141, 141, 0.75);
+  -moz-box-shadow: 5px 5px 5px -4px rgba(143, 141, 141, 0.75);
 }

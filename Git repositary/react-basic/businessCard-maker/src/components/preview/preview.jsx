@@ -1,5 +1,6 @@
 import React from 'react';
+import styles from './preview.module.css';
 
-const Preview = (props) => <h1>preview</h1>;
+const Preview = () => <section className={styles.preview}></section>;
 
 export default Preview;

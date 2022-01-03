@@ -1,4 +1,4 @@
-@value makerWhite from '../../common/colors.css';
+@value makerLightGrey from '../../common/colors.css';
 @value makerGrey from '../../common/colors.css';
 @value makerOrange from '../../common/colors.css';
 
@@ -9,10 +9,10 @@
   width: 25%;
   height: 30%;
   padding: 0.5em;
-  box-shadow: 10px 10px 5px -4px rgba(56, 54, 54, 0.75);
-  -webkit-box-shadow: 10px 10px 5px -4px rgba(56, 54, 54, 0.75);
-  -moz-box-shadow: 10px 10px 5px -4px rgba(56, 54, 54, 0.75);
-  background-color: makerWhite;
+  box-shadow: 10px 10px 5px -4px rgba(143, 141, 141, 0.75);
+  -webkit-box-shadow: 10px 10px 5px -4px rgba(143, 141, 141, 0.75);
+  -moz-box-shadow: 10px 10px 5px -4px rgba(143, 141, 141, 0.75);
+  background-color: makerLightGrey;
   color: makerGrey;
   border-radius: 10px;
 }
@@ -24,7 +24,7 @@
 .ul {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 95%;
   height: 100%;
   list-style: none;
   padding-left: 0;
@@ -44,7 +44,7 @@
   border: none;
   font-size: 1em;
   font-weight: bold;
-  color: makerWhite;
+  color: makerLightGrey;
   background-color: makerGrey;
   cursor: pointer;
 }

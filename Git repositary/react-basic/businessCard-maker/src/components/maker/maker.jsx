@@ -22,14 +22,14 @@ const Maker = ({ authService }) => {
   });
 
   return (
-    <div className={styles.maker}>
+    <section className={styles.maker}>
       <Header authService={authService} onLogout={onLogout} />
-      <section>
+      <div className={styles.container}>
         <Editor></Editor>
         <Preview></Preview>
-      </section>
+      </div>
       <Footer />
-    </div>
+    </section>
   );
 };
 

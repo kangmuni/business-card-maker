@@ -1,19 +1,19 @@
 @value makerLightGrey from '../../common/colors.css';
 @value makerGrey from '../../common/colors.css';
-@value makerOrange from '../../common/colors.css';
+@value makerPink from '../../common/colors.css';
 
 .login {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25%;
-  height: 30%;
+  width: 37%;
+  height: 35%;
   padding: 0.5em;
   box-shadow: 10px 10px 5px -4px rgba(143, 141, 141, 0.75);
   -webkit-box-shadow: 10px 10px 5px -4px rgba(143, 141, 141, 0.75);
   -moz-box-shadow: 10px 10px 5px -4px rgba(143, 141, 141, 0.75);
   background-color: makerLightGrey;
-  color: makerGrey;
+  color: makerPink;
   border-radius: 10px;
 }
 
@@ -50,5 +50,5 @@
 }
 
 .button:hover {
-  color: makerOrange;
+  color: makerPink;
 }

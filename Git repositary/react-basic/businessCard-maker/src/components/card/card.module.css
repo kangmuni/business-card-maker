@@ -1,0 +1,65 @@
+@value makerOrange from '../../common/colors.css';
+@value makerLightGrey from '../../common/colors.css';
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+
+p,
+h1 {
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 1.5em;
+  margin: 0 2em 1em 2em;
+  list-style: none;
+  width: 55%;
+  font-family: 'Spartan', sans-serif;
+}
+
+.card.dark {
+  background-color: black;
+  color: makerOrange;
+}
+
+.card.light {
+  background-color: white;
+  color: makerOrange;
+}
+
+.card.colorful {
+  background-color: makerOrange;
+  color: white;
+}
+
+.info {
+  width: 100%;
+  margin-right: 1em;
+}
+
+.container {
+  margin-bottom: 4em;
+}
+
+.title {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.name {
+  font-size: 1.5em;
+}
+
+.company,
+.email,
+.message {
+  font-size: 0.85em;
+}
+
+.avatar {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+}

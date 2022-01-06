@@ -1,4 +1,9 @@
+@value makerPink from '../../common/colors.css';
+
 .preview {
-  flex-basis: 50%;
-  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 60%;
+  margin: 1em auto;
 }

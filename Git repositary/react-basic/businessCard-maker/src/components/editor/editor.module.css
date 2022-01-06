@@ -1,4 +1,13 @@
+@value makerLightGrey from '../../common/colors.css';
+
 .editor {
-  flex-basis: 50%;
-  background-color: yellowgreen;
+  flex-basis: 40%;
+  margin: 1em 0 3em 0;
+  border-right: 3px solid makerLightGrey;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  transform: translateY(2.5em);
 }

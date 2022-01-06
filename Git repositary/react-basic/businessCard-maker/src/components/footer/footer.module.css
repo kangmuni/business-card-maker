@@ -1,5 +1,19 @@
+@value makerOrange from '../../common/colors.css';
+@value makerLightGrey from '../../common/colors.css';
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+
 .footer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  margin: 0;
-  background-color: rgb(215, 159, 241);
+  padding-left: 2em;
+  background-color: makerOrange;
+  color: makerLightGrey;
+}
+
+.title {
+  padding: 1em;
+  font-size: 0.5em;
+  font-weight: bold;
+  font-family: 'Spartan', sans-serif;
 }

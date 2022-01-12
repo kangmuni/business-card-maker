@@ -1,33 +1,33 @@
 @value makerLightGrey from '../../common/colors.css';
 @value makerGrey from '../../common/colors.css';
-@value makerPink from '../../common/colors.css';
+@value makerOrange from '../../common/colors.css';
 
 .login {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 37%;
-  height: 35%;
-  padding: 0.5em;
+  width: 30%;
+  height: 32%;
+  padding: 2em;
   box-shadow: 10px 10px 5px -4px rgba(143, 141, 141, 0.75);
   -webkit-box-shadow: 10px 10px 5px -4px rgba(143, 141, 141, 0.75);
   -moz-box-shadow: 10px 10px 5px -4px rgba(143, 141, 141, 0.75);
-  background-color: makerLightGrey;
-  color: makerPink;
+  background-color: makerOrange;
   border-radius: 10px;
 }
 
 .title {
-  font-size: 2em;
+  font-size: 1.5em;
+  color: white;
 }
 
 .ul {
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 90%;
   height: 100%;
   list-style: none;
-  padding-left: 0;
+  padding: 0.5em;
 }
 
 .list {
@@ -36,19 +36,18 @@
   height: 100%;
   margin-bottom: 0.5em;
   border-radius: 10px;
-  background-color: makerGrey;
 }
 
 .button {
-  width: 90%;
+  width: 100%;
   border: none;
   font-size: 1em;
   font-weight: bold;
-  color: makerLightGrey;
-  background-color: makerGrey;
+  color: makerOrange;
+  background-color: white;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .button:hover {
-  color: makerPink;
 }

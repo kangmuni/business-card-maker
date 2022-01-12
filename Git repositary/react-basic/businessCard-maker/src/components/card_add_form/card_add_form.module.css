@@ -1,0 +1,53 @@
+@value makerLightGrey from '../../common/colors.css';
+@value makerOrange from '../../common/colors.css';
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  width: 23em;
+  height: 37em;
+  background-color: makerOrange;
+  opacity: 0.9;
+  border-radius: 30px;
+  border: 10px solid;
+}
+
+.input,
+.select,
+.textarea,
+.imageFileInput {
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  border-radius: 20px;
+  border: none;
+  font-size: 1em;
+  background-color: white;
+}
+
+.select {
+  padding-right: 2em;
+}
+
+.button {
+  position: absolute;
+  bottom: 2em;
+  width: 4em;
+  height: 2.5em;
+  border-radius: 50px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+}

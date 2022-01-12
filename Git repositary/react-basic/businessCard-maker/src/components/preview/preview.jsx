@@ -4,9 +4,11 @@ import Card from '../card/card';
 
 const Preview = ({ cards }) => (
   <section className={styles.preview}>
-    {cards.map((card) => (
-      <Card card={card} />
-    ))}
+    <div className={styles.container}>
+      {cards.map((card) => (
+        <Card card={card} />
+      ))}
+    </div>
   </section>
 );
 

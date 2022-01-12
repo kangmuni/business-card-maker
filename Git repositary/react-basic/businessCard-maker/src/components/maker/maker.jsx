@@ -10,34 +10,34 @@ const Maker = ({ authService }) => {
   const [cards, setCards] = useState([
     {
       id: '1',
-      name: 'muni1',
-      company: 'Samsung',
+      name: '강무늬',
+      company: 'Naver',
       theme: 'colorful',
       title: 'Software Engineer',
       email: 'muni@google.com',
       message: 'keep going',
       fileName: 'muni.jpg',
     },
-    // {
-    //   id: '2',
-    //   name: 'muni2',
-    //   company: 'Samsung',
-    //   theme: 'light',
-    //   title: 'Software Engineer',
-    //   email: 'muni@google.com',
-    //   message: 'keep going',
-    //   fileName: 'muni.jpg',
-    // },
-    // {
-    //   id: '3',
-    //   name: 'muni3',
-    //   company: 'Samsung',
-    //   theme: 'light',
-    //   title: 'Software Engineer',
-    //   email: 'muni@google.com',
-    //   message: 'keep going',
-    //   fileName: 'muni.jpg',
-    // },
+    {
+      id: '2',
+      name: '강무늬',
+      company: 'Watcha',
+      theme: 'light',
+      title: 'Software Engineer',
+      email: 'muni@google.com',
+      message: 'keep going',
+      fileName: 'muni.jpg',
+    },
+    {
+      id: '3',
+      name: '강무늬',
+      company: 'Nexflix',
+      theme: 'dark',
+      title: 'Software Engineer',
+      email: 'muni@google.com',
+      message: 'keep going',
+      fileName: 'muni.jpg',
+    },
   ]);
 
   const navigate = useNavigate();
@@ -53,13 +53,17 @@ const Maker = ({ authService }) => {
       }
     });
   });
-  console.log(cards);
+
+  const addCard = (card) => {
+    const updated = [...cards, card];
+    setCards(updated);
+  };
 
   return (
     <section className={styles.maker}>
       <Header authService={authService} onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor cards={cards}></Editor>
+        <Editor cards={cards} addCard={addCard}></Editor>
         <Preview cards={cards}></Preview>
       </div>
       <Footer />

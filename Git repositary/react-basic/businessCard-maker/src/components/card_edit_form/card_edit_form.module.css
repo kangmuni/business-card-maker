@@ -1,49 +1,118 @@
-@value makerLightGrey from '../../common/colors.css';
 @value makerOrange from '../../common/colors.css';
+@value makerLightGrey from '../../common/colors.css';
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
+button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
 }
 
-.form {
+input {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  outline: 0;
+  border: 0;
+}
+
+select {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  outline: 0;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 1.5em;
+  margin: 0 2em 1em 2em;
+  list-style: none;
+  min-width: 55%;
+}
+
+.card.dark {
+  background-color: black;
+  color: makerOrange;
+}
+
+.card.light {
+  background-color: white;
+  color: makerOrange;
+}
+
+.card.colorful {
+  background-color: makerOrange;
+  color: white;
+}
+
+.info {
+  width: 100%;
+  margin-right: 1em;
+}
+
+.firstContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2em;
-  width: 25em;
-  height: 37em;
-  background-color: makerOrange;
-  opacity: 0.9;
-  border-radius: 30px;
-  border: 10px solid;
+  margin-bottom: 2.5rem;
 }
 
-.input,
-.select,
-.textarea,
-.imageFileInput {
-  width: 100%;
-  padding: 1em;
-  margin-bottom: 0.5em;
-  border-radius: 20px;
-  border: none;
+.secondContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
   font-size: 1em;
-  background-color: white;
+  font-weight: bold;
+}
+
+.name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.select {
+  display: block;
+}
+
+.company,
+.email,
+.message {
+  font-size: 0.85em;
+}
+
+.avatar {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+}
+
+.card.colorful input,
+.card.colorful select {
+  color: white;
+}
+
+.card.dark input,
+.card.dark select,
+.card.light input,
+.card.light select {
+  color: makerOrange;
 }
 
 .button {
-  position: absolute;
-  bottom: 2em;
-  width: 4em;
-  height: 2.5em;
-  border-radius: 50px;
-  background-color: black;
+  align-self: flex-start;
+}
+
+.btn.dark,
+.btn.light {
+  color: makerOrange;
+}
+
+.btn.colorful {
   color: white;
-  border: none;
-  font-size: 1em;
-  cursor: pointer;
 }

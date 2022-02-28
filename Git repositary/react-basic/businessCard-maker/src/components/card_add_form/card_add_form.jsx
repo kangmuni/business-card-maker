@@ -47,10 +47,9 @@ const CardAddForm = ({ onAdd }) => {
         className={styles.select}
         name="theme"
         placeholder="theme"
+        defaultValue="theme"
       >
-        <option disabled selected>
-          theme
-        </option>
+        <option disabled>theme</option>
         <option placeholder="light">light</option>
         <option placeholder="dark">dark</option>
         <option placeholder="colorful">colorful</option>

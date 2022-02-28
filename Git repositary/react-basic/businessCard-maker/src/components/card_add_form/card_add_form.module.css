@@ -35,10 +35,6 @@ button:focus {
   background-color: white;
 }
 
-.select {
-  padding-right: 2em;
-}
-
 .button {
   position: absolute;
   bottom: 2em;

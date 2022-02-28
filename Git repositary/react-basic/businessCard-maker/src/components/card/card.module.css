@@ -1,10 +1,17 @@
 @value makerOrange from '../../common/colors.css';
 @value makerLightGrey from '../../common/colors.css';
-@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
 p,
 h1 {
   margin: 0;
+}
+
+button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
 }
 
 .card {
@@ -12,11 +19,10 @@ h1 {
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
-  padding: 1.5em;
+  padding: 1.5em 1em 1.5em 1.5em;
   margin: 0 2em 1em 2em;
   list-style: none;
-  width: 55%;
-  font-family: 'Spartan', sans-serif;
+  min-width: 55%;
 }
 
 .card.dark {
@@ -62,4 +68,22 @@ h1 {
   width: 10em;
   height: 10em;
   border-radius: 50%;
+}
+
+.button {
+  display: flex;
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+.editBtn.dark,
+.editBtn.light,
+.deleteBtn.dark,
+.deleteBtn.light {
+  color: makerOrange;
+}
+
+.editBtn.colorful,
+.deleteBtn.colorful {
+  color: white;
 }

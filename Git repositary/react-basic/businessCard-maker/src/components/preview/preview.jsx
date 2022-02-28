@@ -3,7 +3,7 @@ import styles from './preview.module.css';
 import Card from '../card/card';
 import CardEditForm from '../card_edit_form/card_edit_form';
 
-const Preview = ({ cards }) => {
+const Preview = ({ cards, updateCard, deleteCard }) => {
   const [cardEditForm, setCardEditForm] = useState(false);
 
   const editCard = (event) => {
@@ -17,12 +17,22 @@ const Preview = ({ cards }) => {
   return (
     <section className={styles.preview}>
       <div className={styles.container}>
-        {cards.map((card) => (
+        {Object.keys(cards).map((key) => (
           <>
             {cardEditForm ? (
-              <CardEditForm card={card} doneCard={doneCard} />
+              <CardEditForm
+                key={key}
+                card={cards[key]}
+                doneCard={doneCard}
+                updateCard={updateCard}
+              />
             ) : (
-              <Card card={card} editCard={editCard} />
+              <Card
+                key={key}
+                card={cards[key]}
+                editCard={editCard}
+                deleteCard={deleteCard}
+              />
             )}
           </>
         ))}

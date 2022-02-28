@@ -7,38 +7,38 @@ import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
 const Maker = ({ authService }) => {
-  const [cards, setCards] = useState([
-    {
+  const [cards, setCards] = useState({
+    1: {
       id: '1',
+      title: 'Software Engineer',
       name: '강무늬',
-      company: 'Naver',
       theme: 'colorful',
-      title: 'Software Engineer',
-      email: 'muni@google.com',
       message: 'keep going',
+      company: 'Naver',
+      email: 'muni@google.com',
       fileName: 'muni.jpg',
     },
-    {
+    2: {
       id: '2',
+      title: 'Software Engineer',
       name: '강무늬',
-      company: 'Watcha',
       theme: 'light',
-      title: 'Software Engineer',
-      email: 'muni@google.com',
       message: 'keep going',
+      company: 'Watcha',
+      email: 'muni@google.com',
       fileName: 'muni.jpg',
     },
-    {
+    3: {
       id: '3',
-      name: '강무늬',
-      company: 'Nexflix',
-      theme: 'dark',
       title: 'Software Engineer',
-      email: 'muni@google.com',
+      name: '강무늬',
+      theme: 'dark',
       message: 'keep going',
+      company: 'Nexflix',
+      email: 'muni@google.com',
       fileName: 'muni.jpg',
     },
-  ]);
+  });
 
   const navigate = useNavigate();
 
@@ -59,12 +59,32 @@ const Maker = ({ authService }) => {
     setCards(updated);
   };
 
+  const updateCard = (card) => {
+    setCards((cards) => {
+      const updated = { ...cards };
+      updated[card.id] = card;
+      return updated;
+    });
+  };
+
+  const deleteCard = (card) => {
+    setCards((cards) => {
+      const updated = { ...cards };
+      delete updated[card.id];
+      return updated;
+    });
+  };
+
   return (
     <section className={styles.maker}>
       <Header authService={authService} onLogout={onLogout} />
       <div className={styles.container}>
         <Editor cards={cards} addCard={addCard}></Editor>
-        <Preview cards={cards}></Preview>
+        <Preview
+          cards={cards}
+          updateCard={updateCard}
+          deleteCard={deleteCard}
+        ></Preview>
       </div>
       <Footer />
     </section>

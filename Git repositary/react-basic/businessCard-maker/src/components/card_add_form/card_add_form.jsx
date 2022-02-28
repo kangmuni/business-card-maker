@@ -4,23 +4,23 @@ import ImageFileInput from '../image_file_input/image_file_input';
 
 const CardAddForm = ({ onAdd }) => {
   const formRef = useRef();
-  const nameRef = useRef();
-  const companyRef = useRef();
-  const themeRef = useRef();
   const titleRef = useRef();
-  const emailRef = useRef();
+  const nameRef = useRef();
+  const themeRef = useRef();
   const messageRef = useRef();
+  const companyRef = useRef();
+  const emailRef = useRef();
 
   const onSubmit = (event) => {
     event.preventDefault();
     const card = {
       id: Date.now(), // uuid
-      name: nameRef.current.value || '',
-      company: companyRef.current.value || '',
-      theme: themeRef.current.value,
       title: titleRef.current.value || '',
-      email: emailRef.current.value || '',
+      name: nameRef.current.value || '',
+      theme: themeRef.current.value,
       message: messageRef.current.value || '',
+      company: companyRef.current.value || '',
+      email: emailRef.current.value || '',
     };
     formRef.current.reset();
     onAdd(card);

@@ -6,16 +6,28 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 const DEFAULT_IMAGE = '/images/default_logo.png';
 const checkIcon = <FontAwesomeIcon icon={faCheck} />;
 
-const CardEditForm = ({ card, doneCard }) => {
+const CardEditForm = ({ card, doneCard, updateCard }) => {
   const formRef = useRef();
-  const nameRef = useRef();
-  const companyRef = useRef();
-  const themeRef = useRef();
   const titleRef = useRef();
-  const emailRef = useRef();
+  const nameRef = useRef();
+  const themeRef = useRef();
   const messageRef = useRef();
-  const { name, company, title, email, message, theme, fileURL } = card;
+  const companyRef = useRef();
+  const emailRef = useRef();
+  const { title, name, theme, message, company, email, fileURL } = card;
   const url = fileURL || DEFAULT_IMAGE;
+
+  const onChange = (event) => {
+    if (event.currentTarget === null) {
+      return;
+    }
+    event.preventDefault();
+    console.log(event.currentTarget.name, event.currentTarget.value);
+    updateCard({
+      ...card,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
+  };
 
   return (
     <form ref={formRef} className={`${styles.card} ${getStyles(theme)}`}>
@@ -24,10 +36,19 @@ const CardEditForm = ({ card, doneCard }) => {
           <input
             ref={titleRef}
             type="text"
+            name="title"
             className={styles.title}
             value={title}
+            onChange={onChange}
           ></input>
-          <input ref={nameRef} className={styles.name} value={name}></input>
+          <input
+            ref={nameRef}
+            type="text"
+            name="name"
+            className={styles.name}
+            value={name}
+            onChange={onChange}
+          ></input>
         </div>
         <div className={styles.secondContainer}>
           <select
@@ -36,6 +57,7 @@ const CardEditForm = ({ card, doneCard }) => {
             name="theme"
             placeholder="theme"
             defaultValue={theme}
+            onChange={onChange}
           >
             <option disabled>theme</option>
             <option placeholder="light">light</option>
@@ -44,15 +66,28 @@ const CardEditForm = ({ card, doneCard }) => {
           </select>
           <input
             ref={messageRef}
+            type="text"
+            name="message"
             className={styles.message}
             value={message}
+            onChange={onChange}
           ></input>
           <input
             ref={companyRef}
+            type="text"
+            name="company"
             className={styles.company}
             value={company}
+            onChange={onChange}
           ></input>
-          <input ref={emailRef} className={styles.email} value={email}></input>
+          <input
+            ref={emailRef}
+            type="text"
+            name="email"
+            className={styles.email}
+            value={email}
+            onChange={onChange}
+          ></input>
         </div>
       </div>
       <img className={styles.avatar} src={url} alt="profile" />

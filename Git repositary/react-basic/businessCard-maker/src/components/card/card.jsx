@@ -7,9 +7,13 @@ const DEFAULT_IMAGE = '/images/default_logo.png';
 const minusIcon = <FontAwesomeIcon icon={faMinus} />;
 const penIcon = <FontAwesomeIcon icon={faPen} />;
 
-const Card = ({ card, editCard }) => {
+const Card = ({ card, editCard, deleteCard }) => {
   const { name, company, title, email, message, theme, fileURL } = card;
   const url = fileURL || DEFAULT_IMAGE;
+
+  const onSubmit = () => {
+    deleteCard(card);
+  };
 
   return (
     <li className={`${styles.card} ${getStyles(theme)}`}>
@@ -30,7 +34,10 @@ const Card = ({ card, editCard }) => {
         >
           {penIcon}
         </button>
-        <button className={`${styles.deleteBtn} ${getStyles(theme)}`}>
+        <button
+          className={`${styles.deleteBtn} ${getStyles(theme)}`}
+          onClick={onSubmit}
+        >
           {minusIcon}
         </button>
       </div>

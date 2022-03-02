@@ -1,6 +1,6 @@
 @value makerOrange from '../../common/colors.css';
 @value makerLightGrey from '../../common/colors.css';
-@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+@value makerPink from '../../common/colors.css';
 
 button {
   background-color: transparent;
@@ -105,14 +105,10 @@ select {
 }
 
 .button {
+  display: flex;
   align-self: flex-start;
 }
 
-.btn.dark,
-.btn.light {
-  color: makerOrange;
-}
-
-.btn.colorful {
-  color: white;
+.checkBtn {
+  color: makerPink;
 }

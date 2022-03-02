@@ -6,7 +6,7 @@ import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
-const Maker = ({ authService }) => {
+const Maker = ({ FileInput, authService }) => {
   const [cards, setCards] = useState({
     1: {
       id: '1',
@@ -16,7 +16,7 @@ const Maker = ({ authService }) => {
       message: 'keep going',
       company: 'Naver',
       email: 'muni@google.com',
-      fileName: 'muni.jpg',
+      fileName: 'muni',
     },
     2: {
       id: '2',
@@ -26,7 +26,7 @@ const Maker = ({ authService }) => {
       message: 'keep going',
       company: 'Watcha',
       email: 'muni@google.com',
-      fileName: 'muni.jpg',
+      fileName: 'muni',
     },
     3: {
       id: '3',
@@ -34,9 +34,9 @@ const Maker = ({ authService }) => {
       name: '강무늬',
       theme: 'dark',
       message: 'keep going',
-      company: 'Nexflix',
+      company: 'Netflix',
       email: 'muni@google.com',
-      fileName: 'muni.jpg',
+      fileName: 'muni',
     },
   });
 
@@ -54,12 +54,7 @@ const Maker = ({ authService }) => {
     });
   });
 
-  const addCard = (card) => {
-    const updated = [...cards, card];
-    setCards(updated);
-  };
-
-  const updateCard = (card) => {
+  const createOrUpdateCard = (card) => {
     setCards((cards) => {
       const updated = { ...cards };
       updated[card.id] = card;
@@ -79,12 +74,17 @@ const Maker = ({ authService }) => {
     <section className={styles.maker}>
       <Header authService={authService} onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor cards={cards} addCard={addCard}></Editor>
-        <Preview
+        <Editor
+          FileInput={FileInput}
           cards={cards}
-          updateCard={updateCard}
+          addCard={createOrUpdateCard}
+        />
+        <Preview
+          FileInput={FileInput}
+          cards={cards}
+          updateCard={createOrUpdateCard}
           deleteCard={deleteCard}
-        ></Preview>
+        />
       </div>
       <Footer />
     </section>

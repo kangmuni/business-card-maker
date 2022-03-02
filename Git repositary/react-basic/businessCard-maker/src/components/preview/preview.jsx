@@ -3,7 +3,7 @@ import styles from './preview.module.css';
 import Card from '../card/card';
 import CardEditForm from '../card_edit_form/card_edit_form';
 
-const Preview = ({ cards, updateCard, deleteCard }) => {
+const Preview = ({ FileInput, cards, updateCard, deleteCard }) => {
   const [cardEditForm, setCardEditForm] = useState(false);
 
   const editCard = (event) => {
@@ -22,6 +22,7 @@ const Preview = ({ cards, updateCard, deleteCard }) => {
             {cardEditForm ? (
               <CardEditForm
                 key={key}
+                FileInput={FileInput}
                 card={cards[key]}
                 doneCard={doneCard}
                 updateCard={updateCard}

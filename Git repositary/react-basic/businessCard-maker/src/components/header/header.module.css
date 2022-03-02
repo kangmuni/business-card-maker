@@ -3,12 +3,9 @@
 @value makerPink from '../../common/colors.css';
 @value makerOrange from '../../common/colors.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
-
 .header {
   display: flex;
-  padding: 2.5em;
-  font-family: 'Spartan', sans-serif;
+  padding: 2em;
 }
 
 .title {

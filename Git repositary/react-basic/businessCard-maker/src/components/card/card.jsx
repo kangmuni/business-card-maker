@@ -1,17 +1,17 @@
 import React from 'react';
 import styles from './card.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus, faPen } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const DEFAULT_IMAGE = '/images/default_logo.png';
-const minusIcon = <FontAwesomeIcon icon={faMinus} />;
 const penIcon = <FontAwesomeIcon icon={faPen} />;
+const trashIcon = <FontAwesomeIcon icon={faTrash} />;
 
 const Card = ({ card, editCard, deleteCard }) => {
   const { name, company, title, email, message, theme, fileURL } = card;
   const url = fileURL || DEFAULT_IMAGE;
 
-  const onSubmit = () => {
+  const onDelete = () => {
     deleteCard(card);
   };
 
@@ -28,17 +28,11 @@ const Card = ({ card, editCard, deleteCard }) => {
       </div>
       <img className={styles.avatar} src={url} alt="profile" />
       <div className={styles.button}>
-        <button
-          className={`${styles.editBtn} ${getStyles(theme)}`}
-          onClick={editCard}
-        >
+        <button className={styles.editBtn} onClick={editCard}>
           {penIcon}
         </button>
-        <button
-          className={`${styles.deleteBtn} ${getStyles(theme)}`}
-          onClick={onSubmit}
-        >
-          {minusIcon}
+        <button className={styles.deleteBtn} onClick={onDelete}>
+          {trashIcon}
         </button>
       </div>
     </li>

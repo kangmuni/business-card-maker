@@ -7,4 +7,3 @@ const firebaseConfig = {
 };
 
 export const firebaseApp = initializeApp(firebaseConfig);
-console.log(firebaseApp);

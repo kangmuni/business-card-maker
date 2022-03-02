@@ -6,7 +6,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 const DEFAULT_IMAGE = '/images/default_logo.png';
 const checkIcon = <FontAwesomeIcon icon={faCheck} />;
 
-const CardEditForm = ({ card, doneCard, updateCard }) => {
+const CardEditForm = ({ FileInput, card, doneCard, updateCard }) => {
   const formRef = useRef();
   const titleRef = useRef();
   const nameRef = useRef();
@@ -15,18 +15,23 @@ const CardEditForm = ({ card, doneCard, updateCard }) => {
   const companyRef = useRef();
   const emailRef = useRef();
   const { title, name, theme, message, company, email, fileURL } = card;
+
   const url = fileURL || DEFAULT_IMAGE;
+  const editForm = true;
 
   const onChange = (event) => {
     if (event.currentTarget === null) {
       return;
     }
     event.preventDefault();
-    console.log(event.currentTarget.name, event.currentTarget.value);
     updateCard({
       ...card,
       [event.currentTarget.name]: event.currentTarget.value,
     });
+  };
+
+  const onFileChange = (file) => {
+    updateCard({ ...card, fileName: file.name, fileURL: file.url });
   };
 
   return (
@@ -91,8 +96,16 @@ const CardEditForm = ({ card, doneCard, updateCard }) => {
         </div>
       </div>
       <img className={styles.avatar} src={url} alt="profile" />
-      <div className={styles.button} onClick={doneCard}>
-        <button className={`${styles.btn} ${getStyles(theme)}`}>
+      <div className={styles.button}>
+        <FileInput
+          name={card.fileName}
+          isEditForm={editForm}
+          onFileChange={onFileChange}
+        />
+        <button
+          className={`${styles.checkBtn} ${getStyles(theme)}`}
+          onClick={doneCard}
+        >
           {checkIcon}
         </button>
       </div>

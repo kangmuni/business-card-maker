@@ -1,5 +1,6 @@
 @value makerOrange from '../../common/colors.css';
 @value makerPink from '../../common/colors.css';
+@value makerGrey from '../../common/colors.css';
 
 .container {
   width: 100%;
@@ -13,4 +14,22 @@
 
 .editBtn {
   color: makerPink;
+}
+
+.loading {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 3px solid grey;
+  border-top: 3px solid makerPink;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

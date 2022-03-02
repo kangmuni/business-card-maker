@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './image_file_input.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +7,7 @@ const cameraIcon = <FontAwesomeIcon icon={faCamera} />;
 
 const ImageFileInput = ({ isEditForm, imageUploader, name, onFileChange }) => {
   const inputRef = useRef();
+  const [loading, setLoading] = useState(false);
 
   const onButtonClick = (event) => {
     event.preventDefault();
@@ -14,7 +15,9 @@ const ImageFileInput = ({ isEditForm, imageUploader, name, onFileChange }) => {
   };
 
   const onChange = async (event) => {
+    setLoading(true);
     const uploaded = await imageUploader.upload(event.target.files[0]);
+    setLoading(false);
     onFileChange({
       name: uploaded.original_filename,
       url: uploaded.url,
@@ -40,6 +43,7 @@ const ImageFileInput = ({ isEditForm, imageUploader, name, onFileChange }) => {
           {name || cameraIcon}
         </button>
       )}
+      {loading && <div className={styles.loading}></div>}
     </div>
   );
 };

@@ -9,8 +9,8 @@ import ImageFileInput from './components/image_file_input/image_file_input';
 import CardRepository from './service/card_repositroy';
 
 const authService = new AuthService(firebaseApp);
+const cardRepository = new CardRepository(firebaseApp);
 const imageUploader = new ImageUploader();
-const cardRepository = new CardRepository();
 
 const FileInput = (props) => (
   <ImageFileInput {...props} imageUploader={imageUploader} />

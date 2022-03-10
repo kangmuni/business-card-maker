@@ -18,7 +18,7 @@ class CardRepository {
   }
 
   removeCard(userId, card) {
-    remove(set(ref(this.database, `${userId}/cards/${card.id}`)));
+    remove(ref(this.database, `${userId}/cards/${card.id}`));
   }
 }
 

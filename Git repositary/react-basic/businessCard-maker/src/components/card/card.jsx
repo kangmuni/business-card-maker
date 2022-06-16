@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './card.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -7,13 +7,14 @@ const DEFAULT_IMAGE = '/images/default_logo.png';
 const penIcon = <FontAwesomeIcon icon={faPen} />;
 const trashIcon = <FontAwesomeIcon icon={faTrash} />;
 
-const Card = ({ card, editCard, deleteCard }) => {
+const Card = memo(({ card, editCard, deleteCard }) => {
   const { name, company, title, email, message, theme, fileURL } = card;
   const url = fileURL || DEFAULT_IMAGE;
 
   const onDelete = () => {
     deleteCard(card);
   };
+  console.log('card');
 
   return (
     <li className={`${styles.card} ${getStyles(theme)}`}>
@@ -37,7 +38,7 @@ const Card = ({ card, editCard, deleteCard }) => {
       </div>
     </li>
   );
-};
+});
 
 function getStyles(theme) {
   switch (theme) {

@@ -53,7 +53,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
     });
     cardRepository.removeCard(userId, card);
   };
-
+  console.log('maker');
   return (
     <section className={styles.maker}>
       <Header authService={authService} onLogout={onLogout} />

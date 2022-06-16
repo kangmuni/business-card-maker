@@ -15,6 +15,7 @@ const Preview = ({ FileInput, cards, updateCard, deleteCard }) => {
     event.preventDefault();
     setCardEditForm(false);
   };
+  console.log('preview');
 
   return (
     <section className={styles.preview}>

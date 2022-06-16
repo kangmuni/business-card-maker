@@ -34,6 +34,8 @@ const CardEditForm = ({ FileInput, card, doneCard, updateCard }) => {
     updateCard({ ...card, fileName: file.name, fileURL: file.url });
   };
 
+  console.log('cardeditform');
+
   return (
     <form ref={formRef} className={`${styles.card} ${getStyles(theme)}`}>
       <div className={styles.info}>

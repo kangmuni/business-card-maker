@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, memo } from 'react';
 import styles from './card_add_form.module.css';
 
-const CardAddForm = ({ FileInput, onAdd }) => {
+const CardAddForm = memo(({ FileInput, onAdd }) => {
   const formRef = useRef();
   const titleRef = useRef();
   const nameRef = useRef();
@@ -25,7 +25,8 @@ const CardAddForm = ({ FileInput, onAdd }) => {
       id: Date.now(), // uuid
       title: titleRef.current.value || '',
       name: nameRef.current.value || '',
-      theme: themeRef.current.value,
+      theme:
+        themeRef.current.value === 'theme' ? 'light' : themeRef.current.value,
       message: messageRef.current.value || '',
       company: companyRef.current.value || '',
       email: emailRef.current.value || '',
@@ -35,6 +36,8 @@ const CardAddForm = ({ FileInput, onAdd }) => {
     formRef.current.reset();
     onAdd(card);
   };
+
+  console.log('cardaddform');
 
   return (
     <form ref={formRef} className={styles.form}>
@@ -92,6 +95,6 @@ const CardAddForm = ({ FileInput, onAdd }) => {
       </button>
     </form>
   );
-};
+});
 
 export default CardAddForm;

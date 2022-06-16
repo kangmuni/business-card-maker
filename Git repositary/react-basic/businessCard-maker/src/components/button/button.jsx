@@ -1,9 +1,8 @@
+import { memo } from 'react';
 import styles from './button.module.css';
 
-const Button = ({ name, onClick }) => (
-  <button className={styles.button} onClick={onClick}>
-    {name}
-  </button>
-);
+const Button = memo((props) => (
+  <ImageFileInput {...props} imageUploader={imageUploader} />
+));
 
 export default Button;

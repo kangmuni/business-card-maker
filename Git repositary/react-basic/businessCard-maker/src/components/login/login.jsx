@@ -21,6 +21,7 @@ const Login = ({ authService }) => {
         user && goToMaker(user.uid);
       });
   });
+  console.log('login');
 
   return (
     <section className={styles.login}>

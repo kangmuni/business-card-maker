@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Business-Card-Maker / 명함 만들기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> **기술**
 
-## Available Scripts
+1. React
+2. React-Hook
 
-In the project directory, you can run:
+- [x] React-Router : 특정 url 경로로 결정하는것을 도와주는 라이브러리
+- [x] Firebase : 간단한 로그인 기능, 사용자의 데이터 저장을 도와줌, realTimeBase와 Authentication을 사용함
+- [x] SDK : 단순히 SDK에서 제공하는 API 함수들만 이용하게 되면 SDK가 자동으로 알아서 파이어베이스와 통신하게 해줌
+- [x] Cloudinary : 파이어베이스에서 클라우드 저장소를 통해 사용자의 업로드 이미지 저장(사이즈 조정 등 가능)
 
-### `yarn start`
+> **기능**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. 파이어베이스로 로그인, 로그아웃 기능을 만듦
+2. 리액트 라우터로 페이지 경로 지정해줘서 화면 전환 가능
+3. 카드 추가, 삭제, 수정 가능
+4. 카드 색상 변경 가능
+5. theme선택 안하면 명함 색상 디폴트 값 화이트
+6. 카드 수정 시 연필 모양 버튼 클릭
+7. 카드 수정 누르고 카메라 버튼 클릭하면 이미지 변경 가능
+8. 카드 수정 완료 시 체크 버튼 클릭하면 완성 됨
+9. 이미지 업로드는 Cloudinary통해 만듦
+10. 실시간 데이터를 파이어베이스를 통홰 관리하고 저장할 수 있음
+11. 파이어베이스를 통해서 새로고침이나 로그아웃을 하고 로그인을 다시해도 동일한 데이터 출력 가능
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> **고쳐야 할 점**
 
-### `yarn test`
+- [ ] 카드 수정 시 움직이는 레이아웃 균형 잡기
+- [ ] 카드 수정 시 모든 명함들이 수정되는 사항 고치기
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![image](https://user-images.githubusercontent.com/68316994/174050914-0da842b5-5d4b-4949-bf56-af054ac21560.png)
+![image](https://user-images.githubusercontent.com/68316994/174050981-74cf92b2-2122-4443-9eb4-a40ad45c64b5.png)

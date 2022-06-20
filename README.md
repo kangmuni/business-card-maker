@@ -1,4 +1,5 @@
 # Business-Card-Maker / 명함 만들기
+Create React App 사용, `yarn start`로 실행
 > **기술**
 1. HTML
 2. CSS

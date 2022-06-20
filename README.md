@@ -1,7 +1,10 @@
 # Business-Card-Maker / 명함 만들기
 > **기술**
-1. React
-2. React-Hook
+1. HTML
+2. CSS
+3. JavaScript
+4. React
+5. React-Hook
 - [x] React-Router : 특정 url 경로로 결정하는것을 도와주는 라이브러리
 - [x] Firebase : 간단한 로그인 기능, 사용자의 데이터 저장을 도와줌, realTimeBase와 Authentication을 사용함
 - [x] SDK : 단순히 SDK에서 제공하는  API 함수들만 이용하게 되면  SDK가 자동으로 알아서 파이어베이스와 통신하게 해줌
